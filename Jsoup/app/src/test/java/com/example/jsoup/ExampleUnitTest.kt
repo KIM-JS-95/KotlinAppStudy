@@ -1,6 +1,6 @@
 package com.example.jsoup
 
-import com.example.univofseoul_meal.Utils.WebCrawlingUtil
+
 import org.jsoup.Jsoup
 import org.junit.Test
 

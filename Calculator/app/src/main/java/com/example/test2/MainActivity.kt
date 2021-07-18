@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
                     entryData += "%"
                 }
             }
+
             btn13.id -> {
                 entryData += "1"
             }

@@ -1,12 +1,8 @@
-package com.example.univofseoul_meal.Utils
+package com.example.jsoup
 
-import android.text.TextUtils
-import android.widget.TextView
 import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Element
-import org.jsoup.select.Elements
 
 object WebCrawlingUtil {
 
@@ -17,7 +13,7 @@ object WebCrawlingUtil {
 
             println(document)
 
-            //조식, 중식, 석식 메뉴 모두 가져옴.
+
             val menu = document.select("li.tch-lnc-wrap").select("dd.tch-lnc")
 
             println(menu)
