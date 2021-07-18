@@ -21,6 +21,7 @@ import com.google.android.gms.maps.model.*
 import java.lang.Exception
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
+
     override fun onCreateOptionsMenu(menu: Menu) : Boolean {
         var inflater:MenuInflater = menuInflater
         inflater.inflate(R.menu.appbar_menu, menu);

@@ -29,6 +29,7 @@
                     app:showAsAction="never" />
             </menu>
         </item>
+
         <item
             android:id="@+id/action_change"
             android:title="Change view angle"
@@ -43,8 +44,8 @@
                     android:id="@+id/set_angle_45"
                     android:title="45 degree"
                     app:showAsAction="never" />
-
             </menu>
         </item>
+
     </item>
 </menu>
