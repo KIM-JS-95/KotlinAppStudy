@@ -19,13 +19,12 @@ class ExampleUnitTest {
 
     @Test
     fun add(){
-        val address = "https://school.cbe.go.kr/sugok-m/M01030701/"
+        val address = "https://www.epicgames.com/store/ko/free-games"
 
         val document = Jsoup.connect(address).get()
 
-        val menu = document.select("li.tch-lnc-wrap").select("dd.tch-lnc")
-
-        WebCrawlingUtil.getMenuMap(address=address)
+        val menu = document.select("div.css-ro5hlk-DiscoverPage__storeContent").select("div.css-shu77l")
+        //WebCrawlingUtil.getMenuMap(address=address)
 
 
         print(menu)

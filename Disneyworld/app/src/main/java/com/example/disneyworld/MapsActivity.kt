@@ -22,14 +22,9 @@ import java.lang.Exception
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
-    override fun onCreateOptionsMenu(menu: Menu) : Boolean {
-        var inflater:MenuInflater = menuInflater
-        inflater.inflate(R.menu.appbar_menu, menu);
-        return true;
-    }
-
     private lateinit var mMap: GoogleMap
     var listCharacters = ArrayList<DisneyCharacter>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
@@ -40,6 +35,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         LoadCharacter ()
         checkPermission()
     }
+
+    override fun onCreateOptionsMenu(menu: Menu) : Boolean {
+        var inflater:MenuInflater = menuInflater
+        inflater.inflate(R.menu.appbar_menu, menu);
+        return true;
+    }
+
     override fun onOptionsItemSelected(item: MenuItem) :Boolean {
         // Handle item selection
         when (item.itemId) {
@@ -80,6 +82,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         }
         return super.onOptionsItemSelected(item)
     }
+
     var ACCESSLOCATION = 123
     fun checkPermission() {
         if(Build.VERSION.SDK_INT >= 23) {
@@ -91,6 +94,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         }
         GetUserLocation()
     }
+
     fun GetUserLocation() {
         Toast.makeText(this,"Location access allowed !", Toast.LENGTH_LONG).show()
         var myLocation = MyLocationListener()
@@ -103,13 +107,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 Manifest.permission.ACCESS_COARSE_LOCATION
             ) != PackageManager.PERMISSION_GRANTED
         ) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
+
             return
         }
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3,3f,myLocation)
@@ -135,15 +133,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
         mMap.uiSettings.isZoomControlsEnabled = true

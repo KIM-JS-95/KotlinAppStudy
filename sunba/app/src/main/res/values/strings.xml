@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">sunba</string>
+    <string name="password_result"> %s </string>
+</resources>
