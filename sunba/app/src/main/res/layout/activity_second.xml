@@ -13,8 +13,9 @@
         android:layout_height="100dp"
         android:layout_centerInParent="true"
         app:lottie_autoPlay="false"
-        app:lottie_fileName="like.json"
+        app:lottie_fileName="lock.json"
         app:lottie_loop="false" />
+
 
     <Button
             android:id="@+id/back"
@@ -22,7 +23,6 @@
             android:layout_height="50dp"
             android:textColor="#f6ff00"
             android:layout_marginLeft="300dp"
-
             android:text="뒤로!"
             />
 
